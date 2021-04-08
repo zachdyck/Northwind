@@ -11,6 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Northwind.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Northwind.API
 {
@@ -26,6 +30,10 @@ namespace Northwind.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Northwind.Data.Models.NorthwindContext>(options => options.UseSqlServer("Data Source=DESKTOP-7BO3GOP;Initial Catalog=Northwind;Trusted_Connection=True;"));
+
+            services.AddScoped<Northwind.Infrastructure.Repositories.CustomerRepository>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -41,7 +49,7 @@ namespace Northwind.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Northwind.API v1"));
+                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Northwind.API v1"); c.DefaultModelExpandDepth(-1); });
             }
 
             app.UseHttpsRedirection();

@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "Northwind": "Data Source=DESKTOP-7BO3GOP;Initial Catalog=Northwind;Trusted_Connection=True;"
+  }
+}

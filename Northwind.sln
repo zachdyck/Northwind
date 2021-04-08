@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Infrastructure", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Services", "Northwind.Services\Northwind.Services.csproj", "{2E04957D-16C8-4DA4-94CD-4A198E452146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.API", "Northwind.API\Northwind.API.csproj", "{64638F86-CEB4-4467-9FD3-8CB9E32DFBE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.API", "Northwind.API\Northwind.API.csproj", "{64638F86-CEB4-4467-9FD3-8CB9E32DFBE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
